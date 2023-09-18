@@ -22,12 +22,10 @@ if st.button("Find Meaning"):
         data = response.json()
         st.write(data)
 
-        if "meaning" in data:
+        if "definition" in data:
             st.subheader("Meaning:")
-            for meaning in data["meaning"]:
-                st.write(meaning + "\n")  # Use "\n" for a newline
-       # else:
- #           st.error("Word not found or API request failed. Please try another word.")
-   # else:
-      #  st.warning("Please enter a word to find its meaning.")
-        
+            definition = data["definition"]
+            # Split the definition into points and display each on a new line
+            points = definition.split(". ")
+            for point in points:
+                st.write(point)
