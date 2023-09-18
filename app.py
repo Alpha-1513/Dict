@@ -20,13 +20,14 @@ if st.button("Find Meaning"):
         querystring = {"word": word}
         response = requests.get(url, headers=headers, params=querystring)
         data = response.json()
+        st.write(data)
 
-        if "meaning" in data:
-            st.subheader("Meaning:")
-            for meaning in data["meaning"]:
-                st.write(meaning + "\n")  # Use "\n" for a newline
-        else:
-            st.error("Word not found or API request failed. Please try another word.")
-    else:
-        st.warning("Please enter a word to find its meaning.")
+       # if "meaning" in data:
+           # st.subheader("Meaning:")
+         #   for meaning in data["meaning"]:
+        #        st.write(meaning + "\n")  # Use "\n" for a newline
+       # else:
+ #           st.error("Word not found or API request failed. Please try another word.")
+   # else:
+      #  st.warning("Please enter a word to find its meaning.")
         
