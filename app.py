@@ -9,7 +9,7 @@ headers = {
 }
 
 # Streamlit app title and header
-st.title("Word Meaning Finder")
+st.title("Word Meaning\Defination Finder by Altamish")
 
 # Input field for user to enter a word
 word = st.text_input("Enter a word:")
@@ -20,8 +20,7 @@ if st.button("Find Meaning"):
         querystring = {"word": word}
         response = requests.get(url, headers=headers, params=querystring)
         data = response.json()
-        st.write(data)
-
+        
         if "definition" in data:
             st.subheader("Meaning:")
             definition = data["definition"]
