@@ -22,10 +22,10 @@ if st.button("Find Meaning"):
         data = response.json()
         st.write(data)
 
-       # if "meaning" in data:
-           # st.subheader("Meaning:")
-         #   for meaning in data["meaning"]:
-        #        st.write(meaning + "\n")  # Use "\n" for a newline
+        if "meaning" in data:
+            st.subheader("Meaning:")
+            for meaning in data["meaning"]:
+                st.write(meaning + "\n")  # Use "\n" for a newline
        # else:
  #           st.error("Word not found or API request failed. Please try another word.")
    # else:
